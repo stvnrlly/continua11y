@@ -6,16 +6,16 @@ block content
             a(href="/instructions") setup guide
         h1 Recent results
     table.table
-        thead
+        thead#wow
             tr
                 th repository
                 th errors
                 th warnings
                 th notices
                 th total
-        tbody
+        tbody#wow
             each report in repos
-                tr#wow
+                tr
                     td 
                         a(href="/#{report.repoName}") #{report.repoName}
                     td #{report.error}

@@ -27,6 +27,8 @@ exports.incoming = function (req, res){
         }
     }, function (err, res, body){
         body = JSON.parse(body);
-        reporter.start(body, req.body);
+        if (req.body.data) {
+            reporter.start(body, req.body);
+        }
     });
 };

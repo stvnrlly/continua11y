@@ -6,14 +6,14 @@ block content
             a(href="/instructions") setup guide
         h1 Recent results
     table.table
-        thead
+        thead#wow
             tr
-                th repository
-                th errors
+                th#row repository
+                th#row errors
                 th warnings
                 th notices
                 th total
-        tbody
+        tbody#wow
             each report in repos
                 tr
                     td 
@@ -22,3 +22,6 @@ block content
                     td #{report.warning}
                     td #{report.notice}
                     td #{report.total}
+    div.row
+        h1#yes Level 1 header
+        h3#yes Level 3 header

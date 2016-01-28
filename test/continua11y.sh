@@ -66,7 +66,7 @@ cd temp
 if ! $USE_SITEMAP;
 then
     echo "${green} >>> ${reset} using wget to mirror site"
-    wget --quiet --mirror --convert-links http://localhost:${PORT}
+    wget --mirror --convert-links http://localhost:${PORT}
 else
     echo "${green} >>> ${reset} using sitemap to mirror relevant portion of site"
     wget --quiet http://localhost:${PORT}/sitemap.xml --no-cache -O - | egrep -o "http://localhost:${PORT}" > sites.txt
@@ -136,4 +136,5 @@ fi
 
 # clean up
 echo "${green} >>> ${reset} cleaning up"
+cat ~/.forever/*.log
 rm -rf temp temp.json curl.txt results.json 
